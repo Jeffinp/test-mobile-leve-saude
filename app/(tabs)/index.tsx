@@ -9,7 +9,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  TouchableWithoutFeedback,
+  Pressable,
   View,
 } from "react-native";
 import { useAuth } from "../../context/AuthContext";
@@ -68,8 +68,7 @@ const SubmitFeedbackScreen = () => {
   };
 
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <View style={styles.container}>
+    <View style={styles.container}>
         <Text style={styles.title}>Deixe seu Feedback</Text>
         <Text style={styles.subtitle}>Como você avalia nosso serviço?</Text>
 
@@ -106,7 +105,6 @@ const SubmitFeedbackScreen = () => {
           <Button title="Enviar Feedback" onPress={handleSubmit} />
         )}
       </View>
-    </TouchableWithoutFeedback>
   );
 };
 
