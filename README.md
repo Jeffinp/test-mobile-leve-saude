@@ -1,50 +1,95 @@
-# Welcome to your Expo app 👋
+# Feedback Hub (Leve Saúde)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 
-## Get started
+## 📝 Descrição
 
-1. Install dependencies
+Este é um aplicativo móvel de exemplo, desenvolvido como parte de um desafio técnico. O **Feedback Hub** permite que os usuários se cadastrem, façam login e visualizem uma lista de feedbacks, demonstrando a integração de um front-end mobile com serviços de back-end como o Firebase para autenticação e banco de dados.
 
-   ```bash
-   npm install
-   ```
+## ✨ Funcionalidades
 
-2. Start the app
+- [x] **Autenticação de Usuários:** Sistema completo de cadastro (signup) e login.
+- [x] **Gerenciamento de Sessão:** Mantém o usuário logado de forma segura.
+- [x] **Visualização de Feedbacks:** Tela principal que exibe uma lista de feedbacks.
+- [x] **Navegação Protegida:** Rotas que só podem ser acessadas por usuários autenticados.
+- [x] **Estrutura Escalável:** Código organizado com foco em componentização e separação de responsabilidades.
 
-   ```bash
-   npx expo start
-   ```
+## 🚀 Tecnologias Utilizadas
 
-In the output, you'll find options to open the app in a
+- **React Native:** Framework para desenvolvimento de aplicativos móveis multiplataforma.
+- **Expo:** Plataforma e conjunto de ferramentas para facilitar o desenvolvimento com React Native.
+- **Expo Router:** Sistema de roteamento baseado em arquivos para uma navegação declarativa.
+- **TypeScript:** Superset do JavaScript que adiciona tipagem estática ao código.
+- **Firebase:**
+    - **Authentication:** Para gerenciamento de usuários.
+    - **Firestore:** Como banco de dados NoSQL para armazenar os feedbacks.
+- **React Context API:** Para gerenciamento de estado global (ex: estado de autenticação).
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## ⚙️ Pré-requisitos
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Antes de começar, você precisará ter as seguintes ferramentas instaladas em sua máquina:
+- [Node.js](https://nodejs.org/en/)
+- [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/) (opcional, mas recomendado)
 
-## Get a fresh project
+## ▶️ Como Executar o Projeto
 
-When you're ready, run:
+Siga os passos abaixo para rodar o projeto em seu ambiente local:
 
-```bash
-npm run reset-project
+1.  **Clone o repositório:**
+    ```bash
+    git clone <URL_DO_SEU_REPOSITORIO>
+    cd test-mobile-leve-saude
+    ```
+
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+
+3.  **Configure as Variáveis de Ambiente:**
+    Este projeto utiliza o Firebase. Para conectar com a sua própria instância, crie um arquivo chamado `.env` na raiz do projeto e adicione as seguintes chaves:
+
+    ```env
+    EXPO_PUBLIC_FIREBASE_API_KEY="SUA_API_KEY"
+    EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN="SEU_AUTH_DOMAIN"
+    EXPO_PUBLIC_FIREBASE_PROJECT_ID="SEU_PROJECT_ID"
+    EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET="SEU_STORAGE_BUCKET"
+    EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID="SEU_MESSAGING_SENDER_ID"
+    EXPO_PUBLIC_FIREBASE_APP_ID="SEU_APP_ID"
+    ```
+
+4.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npx expo start
+    ```
+
+Após executar o comando, o Metro Bundler será aberto no seu navegador. Você poderá então abrir o aplicativo em:
+- Um emulador Android
+- Um simulador de iOS
+- Seu próprio dispositivo físico usando o app Expo Go
+
+## 📂 Estrutura do Projeto
+
+O projeto é organizado da seguinte forma para facilitar a manutenção e escalabilidade:
+
+```
+test-mobile-leve-saude/
+├── app/                # Definição das rotas e telas usando Expo Router
+│   ├── (auth)/         # Rotas de autenticação (login, signup)
+│   └── (tabs)/         # Rotas principais após o login
+├── assets/             # Imagens, fontes e outros arquivos estáticos
+├── components/         # Componentes React reutilizáveis
+├── constants/          # Constantes globais (cores, estilos)
+├── context/            # Contextos React para gerenciamento de estado
+├── hooks/              # Hooks customizados
+├── lib/                # Módulos e bibliotecas (configuração do Firebase)
+└── ...
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Feito com ❤️ para o desafio Leve Saúde.

@@ -1,0 +1,23 @@
+[{
+	"resource": "/c:/Users/jeff/Documents/Projects/test-mobile-leve-saude/components/ui/IconSymbol.tsx",
+	"owner": "typescript",
+	"code": "2322",
+	"severity": 8,
+	"message": "Type '\"home\" | \"format_list_bulleted\" | \"send\" | \"code\" | \"chevron-right\"' is not assignable to type '\"home\" | \"send\" | \"code\" | \"chevron-right\" | \"light\" | \"style\" | \"accessible\" | \"link\" | \"email\" | \"search\" | \"image\" | \"menu\" | \"radio\" | \"tab\" | \"timer\" | \"forward\" | \"info\" | ... 2217 more ... | undefined'.\n  Type '\"format_list_bulleted\"' is not assignable to type '\"home\" | \"send\" | \"code\" | \"chevron-right\" | \"light\" | \"style\" | \"accessible\" | \"link\" | \"email\" | \"search\" | \"image\" | \"menu\" | \"radio\" | \"tab\" | \"timer\" | \"forward\" | \"info\" | ... 2217 more ... | undefined'. Did you mean '\"format-list-bulleted\"'?",
+	"source": "ts",
+	"startLineNumber": 44,
+	"startColumn": 7,
+	"endLineNumber": 44,
+	"endColumn": 11,
+	"relatedInformation": [
+		{
+			"startLineNumber": 17,
+			"startColumn": 5,
+			"endLineNumber": 17,
+			"endColumn": 9,
+			"message": "The expected type comes from property 'name' which is declared here on type 'IntrinsicAttributes & IntrinsicClassAttributes<Component<IconProps<\"home\" | \"send\" | \"code\" | \"chevron-right\" | \"light\" | \"style\" | \"accessible\" | \"link\" | \"email\" | \"search\" | \"image\" | \"menu\" | ... 2221 more ... | \"zoom-out-map\">, {}, any>> & Pick<...> & InexactPartial<...> & InexactPartial<...>'",
+			"resource": "/c:/Users/jeff/Documents/Projects/test-mobile-leve-saude/node_modules/@expo/vector-icons/build/createIconSet.d.ts"
+		}
+	],
+	"modelVersionId": 14
+}]
