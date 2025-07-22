@@ -7,7 +7,7 @@ import {
   Timestamp,
   where,
 } from "firebase/firestore";
-import React, { useEffect, useState } => "react";
+import React, { useEffect, useState } from "react";
 import {
   ActivityIndicator,
   FlatList,
