@@ -41,7 +41,7 @@ Siga os passos abaixo para rodar o projeto em seu ambiente local:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone <URL_DO_SEU_REPOSITORIO>
+    git clone https://github.com/Jeffinp/test-mobile-leve-saude
     cd test-mobile-leve-saude
     ```
 
