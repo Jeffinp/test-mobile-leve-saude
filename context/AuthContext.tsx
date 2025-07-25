@@ -1,5 +1,5 @@
 // Em src/context/AuthContext.tsx
-import { onAuthStateChanged, User } from "firebase/auth";
+import { onAuthStateChanged, signOut, User } from "firebase/auth";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../lib/firebase";
 
@@ -8,10 +8,12 @@ import { auth } from "../lib/firebase";
  * @interface AuthContextType
  * @property {User | null} currentUser - O objeto do usuário autenticado, ou null se não houver usuário.
  * @property {boolean} loading - Indica se o estado de autenticação está sendo carregado.
+ * @property {() => Promise<void>} logout - Função para realizar o logout do usuário.
  */
 interface AuthContextType {
   currentUser: User | null;
   loading: boolean;
+  logout: () => Promise<void>;
 }
 
 /**
@@ -42,6 +44,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [loading, setLoading] = useState(true);
 
   /**
+   * Função para realizar o logout do usuário.
+   * @returns {Promise<void>} Uma promessa que é resolvida quando o logout é concluído.
+   */
+  const logout = async (): Promise<void> => {
+    return signOut(auth);
+  };
+
+  /**
    * Efeito colateral que observa as mudanças no estado de autenticação do Firebase.
    * Define o usuário atual e atualiza o status de carregamento.
    * Retorna uma função de unsubscribe para limpar o listener.
@@ -61,6 +71,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const value = {
     currentUser,
     loading,
+    logout,
   };
 
   return (
