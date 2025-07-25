@@ -1,7 +1,8 @@
 /**
- * Re-exporta o hook `useColorScheme` do `react-native`.
- * Este hook permite acessar o esquema de cores preferido do usuário (claro ou escuro)
- * definido nas configurações do sistema operacional.
- * @see https://reactnative.dev/docs/usecolorscheme
+ * Hook simplificado que sempre retorna 'light' como esquema de cores.
+ * Substitui o hook original que verificava o esquema de cores do sistema.
+ * @returns {'light'} Sempre retorna 'light'
  */
-export { useColorScheme } from 'react-native';
+export function useColorScheme(): 'light' {
+    return 'light';
+}

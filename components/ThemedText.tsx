@@ -1,39 +1,26 @@
 import { StyleSheet, Text, type TextProps } from "react-native";
 
-import { useThemeColor } from "@/hooks/useThemeColor";
-
 /**
  * Propriedades para o componente ThemedText.
- * Estende as propriedades padrão de TextProps e adiciona opções para cores de tema e tipos de texto predefinidos.
+ * Estende as propriedades padrão de TextProps e adiciona opções para tipos de texto predefinidos.
  * @interface ThemedTextProps
- * @property {string} [lightColor] - Cor do texto para o tema claro.
- * @property {string} [darkColor] - Cor do texto para o tema escuro.
  * @property {'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link'} [type='default'] - Tipo de estilo predefinido para o texto.
  */
 export type ThemedTextProps = TextProps & {
-  lightColor?: string;
-  darkColor?: string;
   type?: "default" | "title" | "defaultSemiBold" | "subtitle" | "link";
 };
 
 export function ThemedText({
   style,
-  lightColor,
-  darkColor,
   type = "default",
   ...rest
 }: ThemedTextProps) {
-  /**
-   * Hook para obter a cor do texto baseada no tema atual.
-   * Se `lightColor` ou `darkColor` forem fornecidos, eles terão precedência.
-   * Caso contrário, a cor 'text' do tema será usada.
-   */
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
+  const textColor = "#11181C";
 
   return (
     <Text
       style={[
-        { color },
+        { color: textColor },
         type === "default" ? styles.default : undefined,
         type === "title" ? styles.title : undefined,
         type === "defaultSemiBold" ? styles.defaultSemiBold : undefined,

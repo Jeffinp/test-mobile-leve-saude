@@ -24,13 +24,14 @@ Este é um aplicativo móvel de exemplo, desenvolvido como parte de um desafio t
 - **Expo Router:** Sistema de roteamento baseado em arquivos para uma navegação declarativa.
 - **TypeScript:** Superset do JavaScript que adiciona tipagem estática ao código.
 - **Firebase:**
-    - **Authentication:** Para gerenciamento de usuários.
-    - **Firestore:** Como banco de dados NoSQL para armazenar os feedbacks.
+  - **Authentication:** Para gerenciamento de usuários.
+  - **Firestore:** Como banco de dados NoSQL para armazenar os feedbacks.
 - **React Context API:** Para gerenciamento de estado global (ex: estado de autenticação).
 
 ## ⚙️ Pré-requisitos
 
 Antes de começar, você precisará ter as seguintes ferramentas instaladas em sua máquina:
+
 - [Node.js](https://nodejs.org/en/)
 - [NPM](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
 - [Expo CLI](https://docs.expo.dev/get-started/installation/) (opcional, mas recomendado)
@@ -40,12 +41,14 @@ Antes de começar, você precisará ter as seguintes ferramentas instaladas em s
 Siga os passos abaixo para rodar o projeto em seu ambiente local:
 
 1.  **Clone o repositório:**
+
     ```bash
     git clone https://github.com/Jeffinp/test-mobile-leve-saude
     cd test-mobile-leve-saude
     ```
 
 2.  **Instale as dependências:**
+
     ```bash
     npm install
     ```
@@ -68,6 +71,7 @@ Siga os passos abaixo para rodar o projeto em seu ambiente local:
     ```
 
 Após executar o comando, o Metro Bundler será aberto no seu navegador. Você poderá então abrir o aplicativo em:
+
 - Um emulador Android
 - Um simulador de iOS
 - Seu próprio dispositivo físico usando o app Expo Go
@@ -89,6 +93,44 @@ test-mobile-leve-saude/
 ├── lib/                # Módulos e bibliotecas (configuração do Firebase)
 └── ...
 ```
+
+---
+
+## 🔍 Análise Detalhada do Projeto
+
+Após analisar o código-fonte completo do projeto, aqui está um resumo abrangente:
+
+### Estrutura Geral
+
+- O aplicativo é um app móvel React Native gerenciado pelo Expo, com roteamento via Expo Router.
+- Dividido em pastas como `app/` para rotas, `components/` para UI reutilizável, `context/` para estado global, `hooks/` para lógica customizada, `lib/` para integrações externas (Firebase), e `constants/` para temas e cores.
+
+### Funcionalidades Principais
+
+- **Autenticação**: Usuários podem se cadastrar e logar via Firebase Authentication. O estado é gerenciado pelo `AuthContext` com listener para mudanças de autenticação.
+- **Envio de Feedback**: Na tela Home (`app/(tabs)/index.tsx`), usuários avaliam com estrelas (1-5) e adicionam comentários (mín. 10 caracteres). Feedbacks são salvos no Firestore com timestamp.
+- **Visualização de Feedbacks**: Na tela "Meus Feedbacks" (`app/(tabs)/myFeedbacks.tsx`), lista feedbacks do usuário atual do Firestore, ordenados por data.
+- **Navegação**: Abas com ícones customizados e feedback háptico. Rotas protegidas redirecionam não-autenticados para login.
+- **Logout**: Botão para sair da conta, integrado ao AuthContext.
+
+### Integrações
+
+- **Firebase**: Authentication para auth, Firestore para armazenar feedbacks (coleção 'feedbacks' com userId, rating, comment, etc.).
+- **Expo Components**: Router para navegação, Haptics para vibração, Symbols para ícones iOS.
+
+### Componentes e Hooks Chave
+
+- **Componentes**: `ThemedText`, `ThemedView` para UI consistente; `HapticTab` para abas com vibração; `IconSymbol` e `TabBarBackground` para customização de tabs.
+- **Hooks**: `useAuth` para contexto de autenticação.
+- **Estilos**: Constantes em `Colors.ts` para consistência visual.
+
+### Observações
+
+- O app é escalável, com boa separação de preocupações.
+- Pontos de melhoria: Adicionar validações mais robustas, suporte offline, ou testes unitários.
+- Total de arquivos: Aproximadamente 30, com foco em TypeScript para tipagem segura.
+
+Esta análise foi gerada com base na inspeção semântica do código. Para atualizações, revise o codebase.
 
 ---
 

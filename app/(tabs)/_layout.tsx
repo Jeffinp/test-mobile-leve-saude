@@ -6,7 +6,6 @@ import { HapticTab } from "@/components/HapticTab";
 import { IconSymbol } from "@/components/ui/IconSymbol";
 import TabBarBackground from "@/components/ui/TabBarBackground";
 import { Colors } from "@/constants/Colors";
-import { useColorScheme } from "@/hooks/useColorScheme";
 
 /**
  * Componente de layout para as abas principais da aplicação.
@@ -14,20 +13,13 @@ import { useColorScheme } from "@/hooks/useColorScheme";
  * @returns {JSX.Element} O componente de layout das abas.
  */
 export default function TabLayout() {
-  /**
-   * Hook para obter o esquema de cores atual (claro ou escuro).
-   * @type {'light' | 'dark' | null | undefined} colorScheme - O esquema de cores atual.
-   */
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
         /** Cor ativa do texto da aba. */
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+        tabBarActiveTintColor: Colors.tint,
         /** Cor de fundo ativa da aba. */
-        tabBarActiveBackgroundColor:
-          Colors[colorScheme ?? "light"].tabBarActiveBackground,
+        tabBarActiveBackgroundColor: Colors.tabBarActiveBackground,
         /** Oculta o cabeçalho da tela. */
         headerShown: false,
         /** Componente personalizado para o botão da aba com feedback háptico. */
